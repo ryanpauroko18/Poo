@@ -1,24 +1,40 @@
-#import random
-#sorteio = random.randint(10, 15)  
-#num = int(input("digite um valor entre 1 e 15,"))
+from datetime import datetime
 
-#if(num == sorteio):
- #   print("você acertou,")
-  #  num = int(input("digite um valor entre 1 e 15,"))
+# CLASSE CAMPUS
+class Campus:
+    def __init__(self):
+        self.nome = ""
+        self.endereco = ""
 
- 
+    def __str__(self):
+        return f"Campus: {self.nome}"
 
-#while(num != sorteio):
- #   print(f"inválido, você errou: tente novamente")
-  #  num = int(input("digite um valor entre 1 e 15,"))
 
-   # print("o nùmero era", sorteio)
+# CLASSE ESTUDANTE
+class Estudante:
+    def __init__(self):
+        self.nome = ""
+        self.data_nasc = ""
+        self.cpf = ""
 
-for i in range (1, 11) :
-    print(i)
+    def __str__(self):
+        return f"Estudante: {self.nome}"
 
-numeros = [1] * 10
-numeros [1] = 2
-numeros [2] = 3
+    # MÉTODO DENTRO DA CLASSE
+    def apresentar(self):
+        print(f"O(a) {self.nome} nasceu em {self.data_nasc}")
+        if self.cpf == "":
+            print("O(a) estudante não cadastrou o cpf.")
+        else:
+            print("CPF:", self.cpf[0:3], "...")
 
-print(numeros)
+
+# CRIANDO OBJETO
+ryan = Estudante()
+ryan.nome = "Ryan Carlos"
+ryan.cpf = "131.379.969.61"
+ryan.data_nasc = "22/02/2008"
+
+# USANDO MÉTODOS
+print(ryan)
+ryan.apresentar()
